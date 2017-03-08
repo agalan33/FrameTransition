@@ -27,40 +27,34 @@ public class RightPanel extends JPanel {
 	
 	//
 	// Transition by columns top to bottom left to right
-	public void transitionLRTB(Graphics g, BufferedImage leftImage) {
+	public void transitionTBLR(Graphics g, BufferedImage leftImage) {
 		// Lab Q1: Your Code Here
-		 int width = leftImage.getWidth();
-
-         int height = leftImage.getHeight();
-
-         for (int j=0; j<height; j++){
-
-                for (int i=0; i<width; i++){
-
-                      int pixelColor= leftImage.getRGB(i,j);
-
-                      img.setRGB(i, j, pixelColor);
-                      repaint();
-
-                      try { Thread.sleep(10); } catch (InterruptedException e) { };
-                }
-               }
+		int width = leftImage.getWidth();
+		int height = leftImage.getHeight();
+		for (int j=0; j<width; j++){
+			for (int i=0; i<height; i++){
+				int pixelColor= leftImage.getRGB(j,i);
+				img.setRGB(j, i, pixelColor);
+			}
+			repaint();
+			try { Thread.sleep(10); } catch (InterruptedException e) { };
+		}
 	}
 
 	//
 	// Transition by rows left to right top to bottom
-//	public void transitionLRTB(Graphics g, BufferedImage leftImage) {
-//		int width = leftImage.getWidth();
-//		int height = leftImage.getHeight();
-//		for (int j=0; j<height; j++){
-//			for (int i=0; i<width; i++){
-//				int pixelColor= leftImage.getRGB(i,j);
-//				img.setRGB(i, j, pixelColor);
-//			}
-//			repaint();
-//			try { Thread.sleep(10); } catch (InterruptedException e) { };
-//		}
-//	}
+	public void transitionLRTB(Graphics g, BufferedImage leftImage) {
+		int width = leftImage.getWidth();
+		int height = leftImage.getHeight();
+		for (int j=0; j<height; j++){
+			for (int i=0; i<width; i++){
+				int pixelColor= leftImage.getRGB(i,j);
+				img.setRGB(i, j, pixelColor);
+			}
+			repaint();
+			try { Thread.sleep(10); } catch (InterruptedException e) { };
+		}
+	}
 	
 	//
 	// Transition by diagonals bottom to top left to right
