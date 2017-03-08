@@ -98,6 +98,37 @@ public class RightPanel extends JPanel {
 		}
 		else {
 			// Lab Q3: Add code to consider image with larger height than width
+			for (int row=0; row<height; row++){
+				int diagonalRow = row;
+				for (int col=0; col<=row; col++) {
+					int pixelColor= leftImage.getRGB(col,diagonalRow);
+					img.setRGB(col, diagonalRow, pixelColor);
+					diagonalRow--;
+				}
+				repaint();
+				try { Thread.sleep(10); } catch (InterruptedException e) { };
+			}
+			for (int i=0; i<(width-height); i++) {
+				int row = height-1;
+				int col = i+1;
+				for (int j=0; j<height; j++) {
+					int pixelColor= leftImage.getRGB(col,row);
+					img.setRGB(col, row, pixelColor);
+					col++; row--;
+				}
+				repaint();
+				try { Thread.sleep(10); } catch (InterruptedException e) { };
+			}
+			for (int i=0; i<=(width); i++) {
+				int diagonalRow = height-1;
+				for (int col=(width-height+i); col<width; col++) {
+					int pixelColor= leftImage.getRGB(col,diagonalRow);
+					img.setRGB(col, diagonalRow, pixelColor);
+					diagonalRow--;
+				}
+				repaint();
+				try { Thread.sleep(10); } catch (InterruptedException e) { };
+			}
 		}
 	}	
 }
