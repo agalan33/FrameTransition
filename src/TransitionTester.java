@@ -19,7 +19,7 @@ public class TransitionTester {
 
 		//Create left frame with source image
 		JFrame leftFrame = new JFrame("Source Frame");
-		leftFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		leftFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		leftFrame.setLocation(LeftFrameXLeft, FrameYTop);
 		leftFrame.setSize(FrameWidth, FrameHeight);
 

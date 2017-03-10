@@ -138,7 +138,7 @@ public class RightPanel extends JPanel {
 		
 		int width = leftImage.getWidth();
 		int height = leftImage.getHeight();
-		for(int i=0;i<=height*100;i++){
+		for(int i=0;i<=100000;i++){
 			
 			Random randomNumber = new Random();
 			int x = randomNumber.nextInt(width);
